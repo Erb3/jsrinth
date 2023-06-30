@@ -1,1 +1,1 @@
-// jsrinth
+export * from "./ModrinthAPI";
