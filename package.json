@@ -1,0 +1,37 @@
+{
+  "name": "jsrinth",
+  "version": "1.0.0",
+  "description": "Unofficial Modrinth API wrapper in Typescript",
+  "main": "src/app.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erb3/jsrinth.git"
+  },
+  "keywords": [
+    "modrinth",
+    "api",
+    "language-binding",
+    "typescript",
+    "javascript",
+    "node",
+    "rinth",
+    "jsrinth",
+    "tsrinth"
+  ],
+  "author": "Erb3 + Contributors",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Erb3/jsrinth/issues"
+  },
+  "homepage": "https://github.com/Erb3/jsrinth#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
