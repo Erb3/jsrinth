@@ -2,20 +2,20 @@ import { getNodeStats } from "./routes/misc/stats";
 
 interface ModrinthAPIOptions {
     apiURL?: string;
-    useragent?: string;
+    userAgent?: string;
 }
 
 class ModrinthAPI {
   apiURL: string;
-  useragent: string;
+  userAgent: string;
 
   constructor(options?: ModrinthAPIOptions) {
-    this.apiURL = options?.apiURL || "https://api.modrinth.com/api/v2/";
-    this.useragent = `${options?.useragent || "Unidentified application"} powered by jsrinth`;
+    this.apiURL = options?.apiURL || "https://api.modrinth.com/v2/";
+    this.userAgent = `${options?.userAgent || "Unidentified application"} powered by jsrinth`;
   }
 
   async getNodeStats() {
-    return getNodeStats();
+    return getNodeStats(this);
   }
 }
 

@@ -1,5 +1,7 @@
 import { ModrinthAPI } from "../../../src/ModrinthAPI";
-const api = new ModrinthAPI();
+const api = new ModrinthAPI({
+  userAgent: "JSRinth unit tests"
+});
 
 test("Able to get node stats", async () => {
   const stats = await api.getNodeStats();
@@ -8,4 +10,5 @@ test("Able to get node stats", async () => {
   expect(stats.files).toBeGreaterThanOrEqual(0);
   expect(stats.projects).toBeGreaterThanOrEqual(0);
   expect(stats.versions).toBeGreaterThanOrEqual(0);
+  expect(stats.ok).toBe(true);
 });
