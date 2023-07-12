@@ -4,6 +4,10 @@
 
 ## Contributing
 
+### Setup dependencies
+
+Run `npm i`
+
 ### Running test
 
 Run `npm test`
