@@ -1,8 +1,8 @@
 import { getNodeStats } from "./routes/misc/stats";
 
 interface ModrinthAPIOptions {
-    apiURL?: string;
-    userAgent?: string;
+  apiURL?: string;
+  userAgent?: string;
 }
 
 class ModrinthAPI {
@@ -11,7 +11,9 @@ class ModrinthAPI {
 
   constructor(options?: ModrinthAPIOptions) {
     this.apiURL = options?.apiURL || "https://api.modrinth.com/v2/";
-    this.userAgent = `${options?.userAgent || "Unidentified application"} powered by jsrinth`;
+    this.userAgent = `${
+      options?.userAgent || "Unidentified application"
+    } powered by jsrinth`;
   }
 
   async getNodeStats() {

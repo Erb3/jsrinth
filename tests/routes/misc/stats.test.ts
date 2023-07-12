@@ -1,6 +1,6 @@
 import { ModrinthAPI } from "../../../src/ModrinthAPI";
 const api = new ModrinthAPI({
-  userAgent: "JSRinth unit tests"
+  userAgent: "JSRinth unit tests",
 });
 
 test("Able to get node stats", async () => {

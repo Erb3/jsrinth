@@ -1,61 +1,42 @@
 {
-    "root": true,
+  "root": true,
 
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:jest/recommended",
-        "plugin:jsonc/base",
-        "plugin:jsonc/recommended-with-jsonc"
-    ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+    "plugin:jsonc/base",
+    "plugin:jsonc/recommended-with-jsonc",
+    "plugin:prettier/recommended"
+  ],
 
-    "parser": "@typescript-eslint/parser",
+  "parser": "@typescript-eslint/parser",
 
-    "parserOptions": {
-        "ecmaVersion": 2016,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": false
-        }
-    },
-
-    "overrides": [
-        {
-            "files": ["*.json", "*.jsonc", "*.json5"],
-            "parser": "jsonc-eslint-parser"
-        }
-    ],
-
-    "env": {
-        "node": true,
-        "browser": true,
-        "jest": true
-    },
-
-    "plugins": [
-        "@typescript-eslint"
-    ],
-
-    "rules": {
-        "indent": [
-            "error",
-            2
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "eol-last": [
-            "error",
-            "never"
-        ]
+  "parserOptions": {
+    "ecmaVersion": 2016,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": false
     }
+  },
+
+  "overrides": [
+    {
+      "files": ["*.json", "*.jsonc", "*.json5"],
+      "parser": "jsonc-eslint-parser"
+    }
+  ],
+
+  "env": {
+    "node": true,
+    "browser": true,
+    "jest": true
+  },
+
+  "plugins": ["@typescript-eslint"],
+
+  "rules": {
+    "quotes": ["error", "double"],
+    "prettier/prettier": "error"
+  }
 }
