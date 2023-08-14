@@ -2,10 +2,10 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import { ModrinthAPI } from "../../ModrinthAPI";
 
 interface nodeStatsResponse {
+  authors: number;
+  files: number;
   projects: number;
   versions: number;
-  files: number;
-  authors: number;
   ok?: boolean;
   error?: string;
 }

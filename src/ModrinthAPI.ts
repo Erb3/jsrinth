@@ -19,6 +19,22 @@ class ModrinthAPI {
   async getNodeStats() {
     return getNodeStats(this);
   }
+
+  async getTotalAuthors() {
+    return (await this.getNodeStats()).authors;
+  }
+
+  async getTotalFiles() {
+    return (await this.getNodeStats()).files;
+  }
+
+  async getTotalProjects() {
+    return (await this.getNodeStats()).projects;
+  }
+
+  async getTotalVersions() {
+    return (await this.getNodeStats()).versions;
+  }
 }
 
 export { ModrinthAPI, ModrinthAPIOptions };
