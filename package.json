@@ -31,7 +31,7 @@
   "homepage": "https://github.com/Erb3/jsrinth#readme",
   "devDependencies": {
     "@types/jest": "^29.5.3",
-    "@typescript-eslint/eslint-plugin": "6.3.0",
+    "@typescript-eslint/eslint-plugin": "6.5.0",
     "@typescript-eslint/parser": "6.3.0",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^9.0.0",
