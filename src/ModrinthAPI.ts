@@ -1,3 +1,7 @@
+import {
+  forgeUpdatesResponse,
+  getForgeUpdates,
+} from "./routes/misc/forgeUpdates";
 import { getNodeStats } from "./routes/misc/stats";
 
 interface ModrinthAPIOptions {
@@ -6,14 +10,18 @@ interface ModrinthAPIOptions {
 }
 
 class ModrinthAPI {
-  apiURL: string;
+  baseURL: string;
   userAgent: string;
 
   constructor(options?: ModrinthAPIOptions) {
-    this.apiURL = options?.apiURL || "https://api.modrinth.com/v2/";
+    this.baseURL = options?.apiURL || "https://api.modrinth.com/v2";
     this.userAgent = `${
       options?.userAgent || "Unidentified application"
-    } powered by jsrinth`;
+    } powered by jsrinth/1.0`;
+  }
+
+  async getForgeUpdates(projectID: string): Promise<forgeUpdatesResponse> {
+    return getForgeUpdates(this, projectID);
   }
 
   async getNodeStats() {

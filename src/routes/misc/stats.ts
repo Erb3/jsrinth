@@ -13,7 +13,7 @@ interface nodeStatsResponse {
 async function getNodeStats(parent: ModrinthAPI): Promise<nodeStatsResponse> {
   return new Promise((accept, reject) => {
     axios
-      .get(parent.apiURL + "statistics")
+      .get(parent.baseURL + "/statistics")
       .then((result: AxiosResponse) => {
         const data: nodeStatsResponse = result.data;
 
