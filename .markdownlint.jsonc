@@ -1,0 +1,10 @@
+{
+  "MD033": {
+    "allowed_elements": ["h1", "p", "div", "a", "img"]
+  },
+  "MD013": {
+    "code_blocks": false,
+    "tables": false,
+    "line_length": 120
+  }
+}

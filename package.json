@@ -15,14 +15,11 @@
   },
   "keywords": [
     "modrinth",
-    "api",
-    "language-binding",
-    "typescript",
-    "javascript",
-    "node",
-    "rinth",
-    "jsrinth",
-    "tsrinth"
+    "wrapper",
+    "api-bindings",
+    "minecraft",
+    "minecraft-modding",
+    "rinth"
   ],
   "author": "Erb3",
   "license": "MPL-2.0",
