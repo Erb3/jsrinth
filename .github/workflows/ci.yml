@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,4 +24,4 @@ jobs:
       - name: Run eslint
         run: pnpm lint
       - name: Run prettier
-        run: pnpx src/** tests/**
+        run: pnpx prettier src/** tests/**
