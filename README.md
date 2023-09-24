@@ -4,21 +4,23 @@
 
 ## Contributing
 
-### Setup dependencies
+We use `pnpm` instead of `npm` in this project. It can be installed with `npm i -g pnpm`.
 
-Run `npm i`
+### Install dependencies
+
+Run `pnpm i`
 
 ### Running test
 
-Run `npm test`
+Run `pnpm test`
 
 ### Running formatter
 
-Run `npm run format`
+Run `pnpm format`
 
 ### Running linter
 
-Run `npm run lint`
+Run `pnpm lint`
 
 ## Copyright disclaimer
 
