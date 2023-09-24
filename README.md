@@ -2,6 +2,11 @@
 
 **Unofficial** Modrinth API wrapper in Typescript.
 
+[![github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg)](https://github.com/Erb3/jsrinth)
+
+> [!WARNING]
+> JSRinth is still in early development, and should probably not be used in production.
+
 ## Contributing
 
 We use `pnpm` instead of `npm` in this project. It can be installed with `npm i -g pnpm`.
