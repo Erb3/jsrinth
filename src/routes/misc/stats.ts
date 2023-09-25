@@ -6,7 +6,7 @@ interface nodeStatsResponse {
   files: number;
   projects: number;
   versions: number;
-  ok?: boolean;
+  ok: boolean;
   error?: string;
 }
 
