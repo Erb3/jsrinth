@@ -1,7 +1,5 @@
-# JSrinth
-
 <h1 align="center"> JSRinth </h1>
-<p align="center">**Unofficial** Modrinth API wrapper in Typescript</p>
+<p align="center"><strong>Unofficial</strong> Modrinth API wrapper in Typescript</p>
 
 [![github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg)](https://github.com/Erb3/jsrinth)
 

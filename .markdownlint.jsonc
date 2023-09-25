@@ -1,6 +1,6 @@
 {
   "MD033": {
-    "allowed_elements": ["h1", "p", "div", "a", "img"]
+    "allowed_elements": ["h1", "p", "strong"]
   },
   "MD013": {
     "code_blocks": false,
