@@ -17,7 +17,7 @@ class ModrinthAPI {
     this.baseURL = options?.apiURL || "https://api.modrinth.com/v2";
     this.userAgent = `${
       options?.userAgent || "Unidentified application"
-    } powered by jsrinth/1.0`;
+    } powered by JSRinth/1.0`;
   }
 
   async getForgeUpdates(projectID: string): Promise<forgeUpdatesResponse> {

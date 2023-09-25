@@ -26,6 +26,91 @@ Run `pnpm format`
 
 Run `pnpm lint`
 
+## To-do
+
+- [x] Useragent
+- [ ] Cache
+- [ ] Projects
+  - [ ] Search
+  - [ ] Get
+  - [ ] Edit
+  - [ ] Delete
+  - [ ] Bulk get
+  - [ ] Bulk edit
+  - [ ] Random
+  - [ ] Create
+  - [ ] Change icon
+  - [ ] Remove icon
+  - [ ] Validate slug / ID
+  - [ ] Add gallery image
+  - [ ] Edit gallery image
+  - [ ] Remove gallery image
+  - [ ] Get dependencies
+  - [ ] Follow
+  - [ ] Unfollow
+  - [ ] Schedule publication
+- [ ] Versions
+  - [ ] List project versions
+  - [ ] Get
+  - [ ] Edit
+  - [ ] Remove
+  - [ ] Create
+  - [ ] Schedule
+  - [ ] Bulk get
+  - [ ] Add files
+  - [ ] Get by hash
+  - [ ] Delete by hash
+  - [ ] Bulk get by hash
+- [ ] Users
+  - [ ] Get
+  - [ ] Edit
+  - [ ] Get from PAT
+  - [ ] Bulk get
+  - [ ] Edit avatar
+  - [ ] Get projects
+  - [ ] Get followed
+  - [ ] Get payout history
+  - [ ] Withdraw
+- [ ] Notifications
+  - [ ] Get
+  - [ ] Get by ID
+  - [ ] Mark as read
+  - [ ] Remove
+  - [ ] Bulk get
+  - [ ] Bulk mark as read
+  - [ ] Bulk remove
+- [ ] Threads
+  - ~~[ ] Report~~
+  - [ ] Get reports
+  - [ ] Get report by ID
+  - [ ] Edit report
+  - [ ] Bulk get reports
+  - [ ] Get thread
+  - [ ] Send thread message
+  - [ ] Bulk get threads
+  - [ ] Remove thread message
+- [ ] Teams
+  - [ ] Get by project
+  - [ ] Get by ID
+  - [ ] Add user
+  - [ ] Bulk get by ID
+  - [ ] Join team
+  - [ ] Edit team member
+  - [ ] Remove team member
+  - [ ] Transfer ownership
+- [ ] Tags
+  - [ ] Get categories
+  - [ ] Get loaders
+  - [ ] Get game versions
+  - [ ] Get title + content of license
+  - [ ] Get donation platforms
+  - [ ] Get report types
+  - [ ] Get project types
+  - [ ] Get project-side types
+- [x] Misc
+  - [x] Node statistics
+  - [x] Forge updates
+
 ## Copyright disclaimer
 
-Modrinth is property of Rinth Inc. jsrinth is in no way shape or form affiliated with Rinth Inc.
+Modrinth is property of Rinth Inc. JSRinth is in no way shape or form affiliated with Rinth Inc.
