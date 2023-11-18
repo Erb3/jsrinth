@@ -18,9 +18,7 @@ class ModrinthAPI {
     this.baseURL = options?.apiURL || "https://api.modrinth.com/v2";
 
     if (typeof options.userAgent === "string") {
-      this.userAgent = `${
-        options.userAgent || "Unidentified application"
-      } powered by JSRinth/1.0`;
+      this.userAgent = options.userAgent;
     } else {
       this.userAgent = generateUserAgent(options.userAgent);
     }
