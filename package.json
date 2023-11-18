@@ -28,7 +28,8 @@
   },
   "homepage": "https://github.com/Erb3/jsrinth#readme",
   "dependencies": {
-    "axios": "^1.5.0"
+    "axios": "^1.5.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",

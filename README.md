@@ -29,7 +29,6 @@ Run `pnpm lint`
 ## To-do
 
 - [x] Useragent
-- [ ] Cache
 - [ ] Projects
   - [ ] Search
   - [ ] Get
@@ -80,7 +79,6 @@ Run `pnpm lint`
   - [ ] Bulk mark as read
   - [ ] Bulk remove
 - [ ] Threads
-  - ~~[ ] Report~~
   - [ ] Get reports
   - [ ] Get report by ID
   - [ ] Edit report

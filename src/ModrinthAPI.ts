@@ -3,21 +3,27 @@ import {
   getForgeUpdates,
 } from "./routes/misc/forgeUpdates";
 import { getNodeStats } from "./routes/misc/stats";
+import { UserAgentData, generateUserAgent } from "./utils";
 
 interface ModrinthAPIOptions {
   apiURL?: string;
-  userAgent?: string;
+  userAgent: UserAgentData | string;
 }
 
 class ModrinthAPI {
   baseURL: string;
   userAgent: string;
 
-  constructor(options?: ModrinthAPIOptions) {
+  constructor(options: ModrinthAPIOptions) {
     this.baseURL = options?.apiURL || "https://api.modrinth.com/v2";
-    this.userAgent = `${
-      options?.userAgent || "Unidentified application"
-    } powered by JSRinth/1.0`;
+
+    if (typeof options.userAgent === "string") {
+      this.userAgent = `${
+        options.userAgent || "Unidentified application"
+      } powered by JSRinth/1.0`;
+    } else {
+      this.userAgent = generateUserAgent(options.userAgent);
+    }
   }
 
   async getForgeUpdates(projectID: string): Promise<forgeUpdatesResponse> {

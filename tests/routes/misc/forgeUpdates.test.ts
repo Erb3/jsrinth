@@ -1,6 +1,6 @@
 import { ModrinthAPI } from "../../../src/ModrinthAPI";
 const api = new ModrinthAPI({
-  userAgent: "JSRinth unit tests",
+  userAgent: "JSRinth Unit Tests",
 });
 
 test("Able to get forge updates for craftify (example)", async () => {
