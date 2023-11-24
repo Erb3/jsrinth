@@ -3,6 +3,10 @@ import {
   getForgeUpdates,
 } from "./routes/misc/forgeUpdates";
 import { getNodeStats } from "./routes/misc/stats";
+import {
+  SearchOptions,
+  searchProjects,
+} from "./routes/projects/searchProjects";
 import { UserAgentData, generateUserAgent } from "./utils";
 
 interface ModrinthAPIOptions {
@@ -46,6 +50,10 @@ class ModrinthAPI {
 
   async getTotalVersions() {
     return (await this.getNodeStats()).versions;
+  }
+
+  async searchProjects(options: SearchOptions) {
+    return searchProjects(this, options);
   }
 }
 

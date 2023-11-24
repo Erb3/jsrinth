@@ -14,7 +14,7 @@ We use `pnpm` instead of `npm` in this project. It can be installed with `npm i 
 
 Run `pnpm i`
 
-### Running test
+### Running tests
 
 Run `pnpm test`
 
@@ -109,6 +109,11 @@ Run `pnpm lint`
   - [x] Node statistics
   - [x] Forge updates
 
+## What to implement
+
+JSRinth should **not** implement API endpoints not featured on the API documentation.
+
 ## Copyright disclaimer
 
-Modrinth is property of Rinth Inc. JSRinth is in no way shape or form affiliated with Rinth Inc.
+> [!Important]
+> Modrinth is property of Rinth Inc. JSRinth is in no way shape or form affiliated with Rinth Inc.

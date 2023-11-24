@@ -46,7 +46,9 @@ test("Able to use UserAgent helper", () => {
   expect(full.userAgent).toBe(
     "Erb3/JSRinth Unit Tests/1.0 (https://github.com/Erb3/JSRinth)"
   );
-  expect(integerVersion.userAgent).toBe("JSRinth Unit Tests/1");
+  expect(integerVersion.userAgent).toBe(
+    "Erb3/JSRinth Unit Tests/1 (https://github.com/Erb3/JSRinth)"
+  );
   expect(nameOnly.userAgent).toBe("JSRinth Unit Tests");
   expect(nameAndVersion.userAgent).toBe("JSRinth Unit Tests/1.0");
   expect(nameAndContact.userAgent).toBe(
