@@ -1,7 +1,6 @@
-import axios, { AxiosError, AxiosResponse } from "axios";
 import { ModrinthAPI } from "../../ModrinthAPI";
 
-interface forgeUpdatesResponse {
+export interface forgeUpdatesResponse {
   homepage: string;
   recommended: Map<string, string>;
   latest: Map<string, string>;
@@ -9,20 +8,19 @@ interface forgeUpdatesResponse {
   error?: string;
 }
 
-async function getForgeUpdates(
+export async function getForgeUpdates(
   parent: ModrinthAPI,
   projectID: string
 ): Promise<forgeUpdatesResponse> {
   return new Promise((accept, reject) => {
-    axios
-      .get(
-        `${parent.baseURL.replace(
-          "/v2",
-          ""
-        )}/updates/${projectID}/forge_updates.json`
-      )
-      .then((result: AxiosResponse) => {
-        const data = result.data;
+    fetch(
+      `${parent.baseURL.replace(
+        "/v2",
+        ""
+      )}/updates/${projectID}/forge_updates.json`
+    )
+      .then(async (result) => {
+        const data = await result.json();
         const recommended = new Map<string, string>();
         const latest = new Map<string, string>();
 
@@ -41,7 +39,7 @@ async function getForgeUpdates(
           ok: true,
         });
       })
-      .catch((error: AxiosError) => {
+      .catch((error) => {
         reject({
           homepage: "https://modrinth.com",
           recommended: {},
@@ -52,5 +50,3 @@ async function getForgeUpdates(
       });
   });
 }
-
-export { getForgeUpdates, forgeUpdatesResponse };

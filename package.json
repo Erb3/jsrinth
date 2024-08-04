@@ -1,18 +1,29 @@
 {
   "name": "jsrinth",
-  "version": "1.0.0",
-  "description": "Unofficial Modrinth API wrapper in Typescript",
-  "main": "src/app.ts",
+  "version": "0.0.1",
+  "author": "Erb3",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MPL-2.0",
   "scripts": {
-    "test": "jest",
-    "lint": "eslint src/**",
-    "format": "prettier src/** tests/** --write",
-    "preinstall": "npx -y only-allow pnpm"
+    "test": "bun run test",
+    "build": "bun build --target=node ./src/index.ts --outfile=dist/index.js && bun run build:declaration",
+    "build:declaration": "tsc --emitDeclarationOnly --project tsconfig.types.json"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.2.2"
+  },
+  "bugs": {
+    "url": "https://github.com/Erb3/jsrinth/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Erb3/jsrinth.git"
   },
+  "description": "Unofficial Modrinth API wrapper in Typescript",
+  "homepage": "https://github.com/Erb3/jsrinth#readme",
   "keywords": [
     "modrinth",
     "modrinth-api",
@@ -20,30 +31,5 @@
     "minecraft",
     "minecraft-modding",
     "rinth"
-  ],
-  "author": "Erb3",
-  "license": "MPL-2.0",
-  "bugs": {
-    "url": "https://github.com/Erb3/jsrinth/issues"
-  },
-  "homepage": "https://github.com/Erb3/jsrinth#readme",
-  "dependencies": {
-    "axios": "^1.5.0",
-    "zod": "^3.22.4"
-  },
-  "devDependencies": {
-    "@types/jest": "^29.5.5",
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
-    "@typescript-eslint/parser": "^6.7.2",
-    "eslint": "^8.50.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-jest": "^27.4.0",
-    "eslint-plugin-jsonc": "^2.9.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "jest": "^29.7.0",
-    "prettier": "^3.0.3",
-    "ts-jest": "^29.1.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
-  }
+  ]
 }

@@ -1,7 +1,6 @@
-import axios, { AxiosError, AxiosResponse } from "axios";
 import { ModrinthAPI } from "../../ModrinthAPI";
 
-interface nodeStatsResponse {
+export interface nodeStatsResponse {
   authors: number;
   files: number;
   projects: number;
@@ -10,12 +9,13 @@ interface nodeStatsResponse {
   error?: string;
 }
 
-async function getNodeStats(parent: ModrinthAPI): Promise<nodeStatsResponse> {
+export async function getNodeStats(
+  parent: ModrinthAPI
+): Promise<nodeStatsResponse> {
   return new Promise((accept, reject) => {
-    axios
-      .get(parent.baseURL + "/statistics")
-      .then((result: AxiosResponse) => {
-        const data: nodeStatsResponse = result.data;
+    fetch(parent.baseURL + "/statistics")
+      .then(async (result) => {
+        const data: nodeStatsResponse = await result.json();
 
         accept({
           authors: data.authors,
@@ -25,7 +25,7 @@ async function getNodeStats(parent: ModrinthAPI): Promise<nodeStatsResponse> {
           ok: true,
         });
       })
-      .catch((error: AxiosError) => {
+      .catch((error) => {
         reject({
           authors: -1,
           files: -1,
@@ -37,5 +37,3 @@ async function getNodeStats(parent: ModrinthAPI): Promise<nodeStatsResponse> {
       });
   });
 }
-
-export { getNodeStats, nodeStatsResponse };

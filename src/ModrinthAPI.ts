@@ -1,13 +1,13 @@
 import {
-  forgeUpdatesResponse,
+  type forgeUpdatesResponse,
   getForgeUpdates,
 } from "./routes/misc/forgeUpdates";
 import { getNodeStats } from "./routes/misc/stats";
 import {
-  SearchOptions,
+  type SearchOptions,
   searchProjects,
 } from "./routes/projects/searchProjects";
-import { UserAgentData, generateUserAgent } from "./utils";
+import { type UserAgentData, generateUserAgent } from "./utils";
 
 interface ModrinthAPIOptions {
   apiURL?: string;
@@ -57,4 +57,4 @@ class ModrinthAPI {
   }
 }
 
-export { ModrinthAPI, ModrinthAPIOptions };
+export { ModrinthAPI, type ModrinthAPIOptions };

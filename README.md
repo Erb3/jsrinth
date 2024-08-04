@@ -111,7 +111,7 @@ Run `pnpm lint`
 
 ## What to implement
 
-JSRinth should **not** implement API endpoints not featured on the API documentation.
+JSRinth should **not** implement API endpoints not featured om the API documentation.
 
 ## Copyright disclaimer
 
