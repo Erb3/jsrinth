@@ -64,10 +64,10 @@ export interface SearchOptions {
 }
 
 class SingleFacetBuilder {
-  facetType: FacetType;
-  facetOperation?: FacetOperation;
-  facetValue?: FacetValue;
-  alternatives: string[] = [];
+  private facetType: FacetType;
+  private facetOperation?: FacetOperation;
+  private facetValue?: FacetValue;
+  private alternatives: string[] = [];
 
   constructor(facetType: FacetType) {
     this.facetType = facetType;
@@ -76,42 +76,42 @@ class SingleFacetBuilder {
   equals(value: FacetValue): SingleFacetBuilder {
     this.facetOperation = FacetOperation["="];
     this.facetValue = value;
-    this.build();
+    this._commitFacet();
     return this;
   }
 
   notEquals(value: FacetValue): SingleFacetBuilder {
     this.facetOperation = FacetOperation["!="];
     this.facetValue = value;
-    this.build();
+    this._commitFacet();
     return this;
   }
 
   greaterThanOrEqualsTo(value: FacetValue): SingleFacetBuilder {
     this.facetOperation = FacetOperation[">="];
     this.facetValue = value;
-    this.build();
+    this._commitFacet();
     return this;
   }
 
   greaterThan(value: FacetValue): SingleFacetBuilder {
     this.facetOperation = FacetOperation[">"];
     this.facetValue = value;
-    this.build();
+    this._commitFacet();
     return this;
   }
 
   lessThanOrEqualsTo(value: FacetValue): SingleFacetBuilder {
     this.facetOperation = FacetOperation["<="];
     this.facetValue = value;
-    this.build();
+    this._commitFacet();
     return this;
   }
 
   lessThan(value: FacetValue): SingleFacetBuilder {
     this.facetOperation = FacetOperation["<"];
     this.facetValue = value;
-    this.build();
+    this._commitFacet();
     return this;
   }
 
@@ -123,7 +123,7 @@ class SingleFacetBuilder {
         const newFacet = new SingleFacetBuilder(this.facetType);
         newFacet.facetOperation = this.facetOperation;
         newFacet.facetValue = facet;
-        newFacet.build();
+        newFacet._commitFacet();
         this.alternatives.push(...newFacet.alternatives);
       }
     });
@@ -131,9 +131,9 @@ class SingleFacetBuilder {
     return this;
   }
 
-  build(): string[] {
+  private _commitFacet(): string[] {
     if (this.facetOperation === undefined || this.facetValue === undefined)
-      throw new Error("Cannot build facet without operation and value.");
+      throw new Error("Cannot commit facet without operation and value.");
 
     this.alternatives.push(
       `${this.facetType} ${FacetOperation[this.facetOperation]} ${
@@ -141,6 +141,10 @@ class SingleFacetBuilder {
       }`
     );
 
+    return this.alternatives;
+  }
+
+  build(): string[] {
     return this.alternatives;
   }
 }

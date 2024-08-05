@@ -1,0 +1,15 @@
+name: CI
+on: push
+jobs:
+  ci:
+    name: bun-ci
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun i
+      - name: Check TypeScript
+        run: bun check
+      - name: Run tests
+        run: bun test

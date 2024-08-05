@@ -1,3 +1,4 @@
+import { expect, test } from "bun:test";
 import { ModrinthAPI } from "../src/ModrinthAPI";
 
 test("Able to use UserAgent helper", () => {

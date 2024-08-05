@@ -1,4 +1,6 @@
+import { expect, test } from "bun:test";
 import { ModrinthAPI } from "../../../src/ModrinthAPI";
+
 const api = new ModrinthAPI({
   userAgent: "JSRinth Unit Tests",
 });
