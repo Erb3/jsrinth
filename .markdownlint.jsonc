@@ -1,7 +1,5 @@
 {
-  "MD033": {
-    "allowed_elements": ["h1", "p", "strong"]
-  },
+  "MD033": false,
   "MD013": {
     "code_blocks": false,
     "tables": false,

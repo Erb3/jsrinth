@@ -1,33 +1,36 @@
 <h1 align="center"> JSRinth </h1>
-<p align="center"><strong>Unofficial</strong> Modrinth API wrapper in Typescript</p>
-
-[![github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg)](https://github.com/Erb3/jsrinth)
+<p align="center">
+  <strong>Unofficial</strong> Modrinth API wrapper in Typescript with zero dependencies and full test coverage
+  <br><br>
+  <img
+    src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg"
+    alt="GitHub icon"
+  />
+</p>
 
 > [!WARNING]
 > JSRinth is still in early development, and should probably not be used in production.
 
 ## Contributing
 
-We use `pnpm` instead of `npm` in this project. It can be installed with `npm i -g pnpm`.
+We use `bun` for development, but you can use the library Node.js or even web!
+
+> [!IMPORTANT]
+> When using with Node.js make sure you are on version v18 or above.
+> Otherwise you won't have access to fetch function.
 
 ### Install dependencies
 
-Run `pnpm i`
+Run `bun i`
 
 ### Running tests
 
-Run `pnpm test`
-
-### Running formatter
-
-Run `pnpm format`
-
-### Running linter
-
-Run `pnpm lint`
+Run `bun test`
 
 ## To-do
 
+- [ ] Linter
+- [ ] Formatter
 - [x] Useragent
 - [ ] Projects
   - [ ] Search
