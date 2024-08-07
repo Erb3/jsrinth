@@ -75,10 +75,12 @@ describe("Facet building", () => {
   });
 });
 
-// test("Searching", () => {
-//   api.searchProjects({
-//     query: "Cactusfix",
-//     sort: "downloads",
-//     facets: [Facets.categories().equals("fabric")],
-//   });
-// });
+describe("Searching", () => {
+  test("Search with no params", async () => {
+    const res = await api.search({});
+    expect(res.total_hits).toBeGreaterThanOrEqual(0);
+    expect(res.limit).toBeGreaterThanOrEqual(0);
+    expect(res.offset).toBe(0);
+    expect(res.hits.length).toBeGreaterThanOrEqual(0);
+  });
+});

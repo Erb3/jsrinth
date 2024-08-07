@@ -6,10 +6,8 @@ const api = new ModrinthAPI({
 });
 
 test("Able to get forge updates for craftify (example)", async () => {
-  const result = await api.getForgeUpdates("craftify");
+  const result = await api.forgeUpdates("craftify");
 
-  expect(result.ok).toBeTruthy();
-  expect(result.error).toBeUndefined();
   expect(result.homepage).toBe("https://modrinth.com/mod/craftify");
   expect(result.latest.size).toBeGreaterThanOrEqual(1);
   expect(result.recommended.size).toBeGreaterThanOrEqual(1);

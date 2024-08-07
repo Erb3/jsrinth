@@ -1,9 +1,4 @@
-import { ModrinthAPI } from "../../ModrinthAPI";
-
-export async function searchProjects(
-  parent: ModrinthAPI,
-  options: SearchOptions
-) {}
+import type { ModrinthAPI } from "../../ModrinthAPI";
 
 export enum FacetType {
   project_type = "projectType",
@@ -147,4 +142,39 @@ class SingleFacetBuilder {
   build(): string[] {
     return this.alternatives;
   }
+}
+
+export interface SearchResults {
+  hits: {}[];
+  offset: number;
+  limit: number;
+  total_hits: number;
+}
+
+export async function search(this: ModrinthAPI, options: SearchOptions) {
+  const params = new URLSearchParams();
+
+  if (options.facets) {
+    params.set(
+      "facets",
+      JSON.stringify(
+        Array.isArray(options.facets)
+          ? options.facets
+          : [options.facets].map((v) => v.build())
+      )
+    );
+  }
+
+  options.query && params.set("query", options.query);
+  options.limit && params.set("query", options.limit.toString());
+  options.offset && params.set("query", options.offset.toString());
+  options.sort && params.set("query", options.sort);
+
+  console.log(params);
+  const res = await this._request<SearchResults>("GET", "search", {
+    query: params,
+  });
+
+  console.log(res);
+  return res;
 }
