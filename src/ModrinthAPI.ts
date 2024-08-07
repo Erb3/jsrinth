@@ -1,6 +1,12 @@
 import { forgeUpdates } from "./routes/misc/forgeUpdates";
 import { statistics } from "./routes/misc/statistics";
 import { search } from "./routes/projects/searchProjects";
+import {
+  fetchCategories,
+  getCategoriesByHeader,
+  getCategoriesByProjectType,
+} from "./routes/tags/categories";
+import { Categories } from "./types/categories";
 import { type UserAgentData, generateUserAgent } from "./utils";
 
 interface ModrinthAPIOptions {
@@ -48,6 +54,12 @@ class ModrinthAPI {
   public forgeUpdates = forgeUpdates;
   public statistics = statistics;
   public search = search;
+  public categories = {
+    fetch: fetchCategories.bind(this),
+    categories: Categories,
+    byProjectType: getCategoriesByProjectType,
+    byHeader: getCategoriesByHeader,
+  };
 }
 
 export { ModrinthAPI, type ModrinthAPIOptions };

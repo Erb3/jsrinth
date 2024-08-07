@@ -170,11 +170,9 @@ export async function search(this: ModrinthAPI, options: SearchOptions) {
   options.offset && params.set("query", options.offset.toString());
   options.sort && params.set("query", options.sort);
 
-  console.log(params);
   const res = await this._request<SearchResults>("GET", "search", {
     query: params,
   });
 
-  console.log(res);
   return res;
 }
