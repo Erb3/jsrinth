@@ -31,7 +31,7 @@ Run `bun test`
 
 - [ ] Linter
 - [ ] Formatter
-- [x] Useragent
+- [x] User-Agent
 - [ ] Projects
   - [ ] Search
   - [ ] Get
@@ -100,7 +100,7 @@ Run `bun test`
   - [ ] Remove team member
   - [ ] Transfer ownership
 - [ ] Tags
-  - [ ] Get categories
+  - [x] Get categories
   - [ ] Get loaders
   - [ ] Get game versions
   - [ ] Get title + content of license

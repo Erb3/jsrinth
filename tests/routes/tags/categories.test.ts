@@ -15,18 +15,16 @@ test("Able to fetch categories", async () => {
 });
 
 describe("Hardcoded Categories", async () => {
-  test.each(Object.entries(api.categories.categories))(
-    "Category %s should not have empty icon",
-    (_, category) => {
+  test("Categories should not have empty icon", async () => {
+    Object.values(api.categories.categories).forEach((category) => {
       expect(category.icon).not.toBe("");
-    }
-  );
+    });
+  });
 
-  const result = await api.categories.fetch();
+  test("Categories should match API", async () => {
+    const result = await api.categories.fetch();
 
-  test.each(Object.entries(api.categories.categories))(
-    "Category %s should should match API",
-    (_, category) => {
+    Object.values(api.categories.categories).forEach((category) => {
       const apiCategory = result.find(
         (v) =>
           v.name === category.name &&
@@ -39,8 +37,8 @@ describe("Hardcoded Categories", async () => {
       expect(category.header).toBe(cat.header);
       expect(category.name).toBe(cat.name);
       expect(category.projectTypes).toContain(cat.projectType);
-    }
-  );
+    });
+  });
 
   test("Can get by project type", () => {
     expect(
