@@ -38,6 +38,10 @@ describe("Hardcoded Categories", async () => {
       expect(category.name).toBe(cat.name);
       expect(category.projectTypes).toContain(cat.projectType);
     });
+
+    result.forEach((v) => {
+      expect(api.categories.categories[v.name]).toBeTruthy();
+    });
   });
 
   test("Can get by project type", () => {
